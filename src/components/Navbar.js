@@ -232,3 +232,23 @@ const MobileDropdownLink = ({ href, children }) => (
     {children}
   </Link>
 );
+
+
+
+//mail
+//dillidarbarma@gmail.com
+//dillidarbarma@yahoo.com
+//domain-name - dilli-darbar.com
+
+//menu
+// Soups
+// Veg Ap
+// Non V ap
+// Curries
+// Other House Sp
+// Rice and Noodles
+// Breads 
+// Flatbreads 
+// Deserts 
+// B
+

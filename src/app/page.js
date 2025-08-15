@@ -4,9 +4,9 @@ import RestaurantSlideshow from "@/components/RestaurantSlideShow";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-black">
       <RestaurantSlideshow/>
-      <div className="h-screen">Hi</div>
+      <div className="h-screen bg-black">Hi</div>
     </div>
   );
 }
