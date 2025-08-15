@@ -5,11 +5,10 @@ const RestaurantSlideshow = () => {
   
   // Restaurant images
   const images = [
-    'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-    'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-    'https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-    'https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-    'https://images.unsplash.com/photo-1552566595-bfd47e5aed08?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'
+    'landing/landing-1.webp',
+    'landing/landing-2.webp',
+    'landing/landing-3.webp',
+    'landing/landing-4.webp'
   ];
 
   // Auto change images every 3.5 seconds

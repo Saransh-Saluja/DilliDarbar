@@ -101,13 +101,14 @@ export default function Navbar() {
 
           {/* Right Nav */}
           <div className="hidden lg:flex items-center space-x-8">
-            <NavLink href="/order-online">Order Online</NavLink>
+            <NavLink href="/Contact">Contact Us</NavLink>
             <NavLink href="/catering">Catering</NavLink>
             <Link
-              href="/contact"
+              href="https://order.toasttab.com/online/woodlands-framingham-1-edgell-road"
+              target="_blank"
               className="px-6 py-2 border border-[#e3c493] text-[#e3c493] hover:text-black hover:bg-[#f5e3c6] transition-all duration-300 rounded-lg text-sm uppercase font-playfair tracking-wider"
             >
-              Contact
+              Order Online
             </Link>
           </div>
 
