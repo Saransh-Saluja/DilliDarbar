@@ -27,7 +27,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
+      <body 
+  className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}
+  suppressHydrationWarning={true}
+>
         <Navbar />
         <div className="h-[80px]"></div>
         {children}
