@@ -31,6 +31,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           
           {/* Left Nav */}
+
           <div className="hidden lg:flex items-center space-x-8">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About Us</NavLink>
@@ -91,8 +92,8 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="Dilli Darbar Logo"
-                width={180}
-                height={180}
+                width={200}
+                height={200}
                 priority
                 className="transition-transform duration-300 group-hover:scale-105"
               />
