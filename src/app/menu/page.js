@@ -571,6 +571,7 @@
 import React from 'react';
 import ThreeColumnMenu from '@/components/ThreeColumn';
 import TwoColumnMenu from '@/components/TwoColumn';
+import NotificationPopup from '@/components/popup';
 
 export default function MenuPage() {
   // Data for ThreeColumnMenu
@@ -773,6 +774,12 @@ export default function MenuPage() {
 
   return (
     <div className="min-h-screen">
+
+      <NotificationPopup 
+        title="Notification"
+        message="Select a dish to learn more!"
+        showOnLoad={true}
+      />
       {/* Use the ThreeColumnMenu */}
       <div id="soups-and-salads">
       <ThreeColumnMenu 

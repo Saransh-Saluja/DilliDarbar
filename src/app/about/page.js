@@ -1,6 +1,8 @@
+
 import React from 'react';
 
 import { Mail, Phone, Clock } from 'lucide-react';
+
 
 
 const AboutPage = () => {
@@ -8,6 +10,7 @@ const AboutPage = () => {
 
     <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden mt-10">
     {/* Subtle Background Elements */}
+
     <div className="absolute inset-0 opacity-5">
       <div className="absolute top-20 left-20 w-64 h-64 border border-yellow-400 rounded-full"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 border border-amber-400 rounded-full"></div>
