@@ -846,7 +846,7 @@ export default function MenuPage() {
       />
       </div>
 
-      <LuxuryItem {...menuData} />;
+      <LuxuryItem {...menuData} />
 
       
 
