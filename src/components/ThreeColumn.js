@@ -133,11 +133,42 @@
 
 // export default ThreeColumnMenu;
 
-'use client'
-import React, { useState } from 'react';
 
-const MenuItem = ({ slug, title, price, subtitle, description }) => {
+
+'use client'
+import React, { useState, useEffect, useRef } from 'react';
+
+const MenuItem = ({ slug, title, price, subtitle, description, index }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const itemRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Add a slight delay based on index for staggered animation
+          setTimeout(() => {
+            setIsVisible(true);
+          }, index * 100);
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the item is visible
+        rootMargin: '50px 0px -50px 0px' // Start animation slightly before item enters viewport
+      }
+    );
+
+    if (itemRef.current) {
+      observer.observe(itemRef.current);
+    }
+
+    return () => {
+      if (itemRef.current) {
+        observer.unobserve(itemRef.current);
+      }
+    };
+  }, [index]);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
@@ -147,7 +178,13 @@ const MenuItem = ({ slug, title, price, subtitle, description }) => {
   const defaultDescription = `Experience the authentic flavors of ${title}. Our chefs have carefully crafted this dish using traditional techniques and the finest ingredients to create a memorable dining experience that will delight your taste buds.`;
 
   return (
-    <div className="cursor-pointer group" onClick={handleClick}>
+    <div 
+      ref={itemRef}
+      className={`cursor-pointer group transition-all duration-700 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+      onClick={handleClick}
+    >
       <div className="menu-item-container relative w-full h-auto min-h-[100px] transition-transform duration-700" style={{
         transformStyle: 'preserve-3d',
         transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
@@ -193,46 +230,139 @@ const MenuItem = ({ slug, title, price, subtitle, description }) => {
   );
 };
 
-const MenuSection = ({ heading, items, className = "" }) => (
-  <div className={`menu-section ${className}`}>
-    <h2 className="text-xl sm:text-2xl font-serif text-[#e3c493] mb-4 sm:mb-6 text-center border-b-2 border-amber-600 pb-2 inline-block w-full">
-      {heading}
-    </h2>
-    <div className="space-y-2">
-      {items.map((item, index) => (
-        <MenuItem key={index} {...item} />
-      ))}
-    </div>
-  </div>
-);
+const MenuSection = ({ heading, items, className = "" }) => {
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const sectionRef = useRef(null);
 
-const MenuImage = ({ menuImage, className = "" }) => (
-  <div className={`flex-shrink-0 hidden lg:block ${className}`}>
-    <div className="w-64 h-80 bg-gradient-to-b from-amber-100 to-amber-200 rounded-lg shadow-lg flex items-center justify-center">
-      {menuImage ? (
-        <img src={menuImage} alt="menu display" className="w-full h-full object-contain rounded-lg" />
-      ) : (
-        <div className="text-center p-8">
-          <div className="w-16 h-16 bg-amber-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-            </svg>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsSectionVisible(true);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '100px 0px -50px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div ref={sectionRef} className={`menu-section ${className}`}>
+      <h2 className={`text-xl sm:text-2xl font-serif text-[#e3c493] mb-4 sm:mb-6 text-center border-b-2 border-amber-600 pb-2 inline-block w-full transition-all duration-700 ease-out ${
+        isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      }`}>
+        {heading}
+      </h2>
+      <div className="space-y-2">
+        {items.map((item, index) => (
+          <MenuItem key={index} {...item} index={index} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const MenuImage = ({ menuImage, className = "" }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 200); // Small delay for the image
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px 0px -50px 0px'
+      }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div ref={imageRef} className={`flex-shrink-0 hidden lg:block ${className}`}>
+      <div className={`w-64 h-80 bg-gradient-to-b from-amber-100 to-amber-200 rounded-lg shadow-lg flex items-center justify-center transition-all duration-800 ease-out ${
+        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+      }`}>
+        {menuImage ? (
+          <img src={menuImage} alt="menu display" className="w-full h-full object-contain rounded-lg" />
+        ) : (
+          <div className="text-center p-8">
+            <div className="w-16 h-16 bg-amber-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+            </div>
+            <p className="text-amber-700 font-serif">Menu Display</p>
           </div>
-          <p className="text-amber-700 font-serif">Menu Display</p>
-        </div>
-      )}
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
-// Three Column Menu Component - Mobile responsive
+// Three Column Menu Component - Mobile responsive with scroll animations
 const ThreeColumnMenu = ({ leftSection, rightSection, menuImage, title, subtitle }) => {
+  const [isTitleVisible, setIsTitleVisible] = useState(false);
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsTitleVisible(true);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '100px 0px -50px 0px'
+      }
+    );
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="bg-black py-8 sm:py-16 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Title Section */}
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="mb-4">
+        <div ref={titleRef} className="text-center mb-8 sm:mb-12">
+          <div className={`mb-4 transition-all duration-700 ease-out ${
+            isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             <p className="text-base sm:text-lg font-serif text-[#e3c493] mb-2">
               {subtitle}
             </p>
@@ -242,7 +372,9 @@ const ThreeColumnMenu = ({ leftSection, rightSection, menuImage, title, subtitle
               </svg>
             </div>
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#e3c493] mb-2">{title}</h1>
+          <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-serif text-[#e3c493] mb-2 transition-all duration-700 ease-out delay-200 ${
+            isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>{title}</h1>
         </div>
 
         {/* Menu Content - Responsive Layout */}

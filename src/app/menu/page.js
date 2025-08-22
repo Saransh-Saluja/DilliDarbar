@@ -784,6 +784,8 @@ export default function MenuPage() {
       />
       </div>
 
+     
+
       {/* Use the TwoColumnMenu */}
       <div id="vegetarian-appetizers">
       <TwoColumnMenu 
@@ -796,34 +798,9 @@ export default function MenuPage() {
       />
       </div>
 
-      {/* You can use multiple instances with different data */}
-      {/* <ThreeColumnMenu 
-        title="Dessert & Coffee"
-        subtitle="Sweet Endings"
-        leftSection={{
-          heading: "Desserts",
-          items: [
-            {
-              slug: "dessert-1",
-              title: "Chocolate Lava Cake",
-              price: 12,
-              subtitle: "Warm cake with vanilla ice cream"
-            }
-          ]
-        }}
-        rightSection={{
-          heading: "Coffee & Tea",
-          items: [
-            {
-              slug: "coffee-1", 
-              title: "Espresso",
-              price: 4,
-              subtitle: "Double shot Italian espresso"
-            }
-          ]
-        }}
-        menuImage={null}
-      /> */}
+      
+
+      
     </div>
   );
 }
