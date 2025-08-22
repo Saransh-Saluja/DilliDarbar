@@ -76,7 +76,7 @@ const RestaurantSlideshow = () => {
     'landing/landing-2.avif',
     'landing/landing-4.jpg',
     'landing/landing-3.jpg',
-    'landing/landing-1.pngg',
+    'landing/landing-1.png',
   ];
 
   // Auto change images every 4 seconds
