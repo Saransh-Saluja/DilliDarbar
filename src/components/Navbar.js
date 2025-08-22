@@ -327,14 +327,14 @@ export default function Navbar() {
               </div>
             </div>
 
-            <NavLink href="/Contact">Contact Us</NavLink>
+            <NavLink href="/contact">Contact Us</NavLink>
             <NavLink href="/catering">Catering</NavLink>
           </div>
 
           {/* Right - Order Online Button */}
           <div className="hidden lg:flex items-center">
             <Link
-              href="https://order.toasttab.com/online/woodlands-framingham-1-edgell-road"
+              href="https://order.toasttab.com/online/dilli-darbar-1-edgell-road"
               target="_blank"
               className="px-6 py-2 border border-[#e3c493] text-[#e3c493] hover:text-black hover:bg-[#f5e3c6] transition-all duration-300 rounded-lg text-sm uppercase font-playfair tracking-wider"
             >
