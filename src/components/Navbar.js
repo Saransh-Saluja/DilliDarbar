@@ -369,12 +369,15 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
+
         <div
           className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
             isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="py-4 border-t border-[#e3c493]/20 space-y-1">
+        <MobileNavLink href="https://order.toasttab.com/online/dilli-darbar-1-edgell-road">Order Online</MobileNavLink>
+
             <MobileNavLink href="/">Home</MobileNavLink>
             <MobileNavLink href="/about">About Us</MobileNavLink>
 
@@ -423,7 +426,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            <MobileNavLink href="https://order.toasttab.com/online/dilli-darbar-1-edgell-road">Order Online</MobileNavLink>
             <MobileNavLink href="/catering">Catering</MobileNavLink>
             <MobileNavLink href="/contact">Contact</MobileNavLink>
           </div>
