@@ -11,14 +11,25 @@ const ComingSoon = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-yellow-300 rounded-full opacity-20"></div>
       </div>
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        {/* Logo */}
-       
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 py-1">
+        {/* Coming Soon Badge - Prominent at Top */}
+        <div className="mb-12 mt-8 animate-fade-in">
+          <div className="inline-block relative">
+            {/* Elegant border frame */}
+            <div className="absolute -inset-3 border border-[#e3c493]/40 rounded-lg"></div>
+            <div className="bg-gradient-to-r from-[#e3c493]/10 to-amber-400/10 backdrop-blur-sm px-8 py-4 rounded-lg border border-[#e3c493]/60 shadow-2xl">
+              <div className="flex items-center space-x-3">
+                <Clock className="w-5 h-5 text-[#e3c493] animate-spin" />
+                <span className="font-playfair text-lg md:text-xl font-medium tracking-[0.2em] text-[#e3c493] uppercase">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Main Heading */}
-        <h1 className="font-playfair text-5xl md:text-7xl text-gray-200 mb-8 max-w-4xl mx-auto leading-tight font-light tracking-wide">
+        <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl text-gray-200 mb-8 max-w-4xl mx-auto leading-tight font-light tracking-wide">
           An Extraordinary Experience
-          <span className="block text-[#e3c493] mt-4">Awaits</span>
+          <span className="block text-[#e3c493] mt-4 text-3xl md:text-5xl lg:text-6xl">Awaits</span>
         </h1>
 
         {/* Subtitle */}
@@ -29,16 +40,6 @@ const ComingSoon = () => {
           <p className="font-playfair text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light italic tracking-wide">
             Opening doors to unforgettable memories
           </p>
-        </div>
-
-        {/* Coming Soon Badge with Animation */}
-        <div className="mb-20">
-          <div className="inline-block bg-[#e3c493] text-black px-12 py-5 rounded-full shadow-2xl shadow-yellow-400/30 transform hover:scale-105 transition-transform duration-300">
-            <div className="flex items-center space-x-3">
-              <Clock className="w-6 h-6 animate-spin" />
-              <span className="font-playfair text-xl font-semibold tracking-widest uppercase">Coming Soon</span>
-            </div>
-          </div>
         </div>
 
         {/* Elegant Description */}
