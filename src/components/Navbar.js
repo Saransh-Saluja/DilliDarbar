@@ -19,6 +19,12 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleMenuDropdown = () => setIsMenuDropdownOpen(!isMenuDropdownOpen);
 
+  // 👇 close mobile nav when clicking a link
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsMenuDropdownOpen(false);
+  };
+
   return (
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-500 ${
@@ -68,7 +74,7 @@ export default function Navbar() {
                 </svg>
               </button>
 
-              {/* Desktop Dropdown - Fixed with proper scrolling */}
+              {/* Desktop Dropdown */}
               <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                 <div className="bg-black/95 backdrop-blur-xl border border-[#e3c493]/30 rounded-xl shadow-lg shadow-[#e3c493]/20 overflow-hidden max-h-80 overflow-y-auto">
                   {[
@@ -139,18 +145,24 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu - Fixed with proper max-height */}
+        {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
             isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="py-4 border-t border-[#e3c493]/20 space-y-1 max-h-96 overflow-y-auto">
-            <MobileNavLink href="https://order.toasttab.com/online/dilli-darbar-1-edgell-road">Order Online</MobileNavLink>
-            <MobileNavLink href="/">Home</MobileNavLink>
-            <MobileNavLink href="/about">About Us</MobileNavLink>
+            <MobileNavLink href="https://order.toasttab.com/online/dilli-darbar-1-edgell-road" closeMenu={closeMenu}>
+              Order Online
+            </MobileNavLink>
+            <MobileNavLink href="/" closeMenu={closeMenu}>
+              Home
+            </MobileNavLink>
+            <MobileNavLink href="/about" closeMenu={closeMenu}>
+              About Us
+            </MobileNavLink>
 
-            {/* Mobile Dropdown - Fixed with proper scrolling */}
+            {/* Mobile Dropdown */}
             <div>
               <button
                 onClick={toggleMenuDropdown}
@@ -196,15 +208,19 @@ export default function Navbar() {
                   ["Desserts", "/menu#desserts"],
                   ["Kids Menu", "/menu#kids-menu"],
                 ].map(([label, link]) => (
-                  <MobileDropdownLink key={link} href={link}>
+                  <MobileDropdownLink key={link} href={link} closeMenu={closeMenu}>
                     {label}
                   </MobileDropdownLink>
                 ))}
               </div>
             </div>
 
-            <MobileNavLink href="/catering">Catering</MobileNavLink>
-            <MobileNavLink href="/contact">Contact</MobileNavLink>
+            <MobileNavLink href="/catering" closeMenu={closeMenu}>
+              Catering
+            </MobileNavLink>
+            <MobileNavLink href="/contact" closeMenu={closeMenu}>
+              Contact
+            </MobileNavLink>
           </div>
         </div>
       </div>
@@ -223,18 +239,20 @@ const NavLink = ({ href, children }) => (
   </Link>
 );
 
-const MobileNavLink = ({ href, children }) => (
+const MobileNavLink = ({ href, children, closeMenu }) => (
   <Link
     href={href}
+    onClick={closeMenu}
     className="block px-4 py-3 text-[#e3c493] hover:text-black hover:bg-[#f5e3c6] transition-all duration-300 text-sm font-playfair uppercase tracking-wide"
   >
     {children}
   </Link>
 );
 
-const MobileDropdownLink = ({ href, children }) => (
+const MobileDropdownLink = ({ href, children, closeMenu }) => (
   <Link
     href={href}
+    onClick={closeMenu}
     className="block px-4 py-2 text-[#e3c493] hover:text-black hover:bg-[#f5e3c6] transition-all duration-300 text-xs font-playfair uppercase tracking-wide"
   >
     {children}
