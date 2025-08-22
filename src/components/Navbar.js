@@ -423,7 +423,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            <MobileNavLink href="/order-online">Order Online</MobileNavLink>
+            <MobileNavLink href="https://order.toasttab.com/online/dilli-darbar-1-edgell-road">Order Online</MobileNavLink>
             <MobileNavLink href="/catering">Catering</MobileNavLink>
             <MobileNavLink href="/contact">Contact</MobileNavLink>
           </div>
