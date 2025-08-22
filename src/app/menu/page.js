@@ -572,6 +572,9 @@ import React from 'react';
 import ThreeColumnMenu from '@/components/ThreeColumn';
 import TwoColumnMenu from '@/components/TwoColumn';
 import NotificationPopup from '@/components/popup';
+import LuxuryMenuItem from '@/components/MenuItem';
+import { Luxurious_Script } from 'next/font/google';
+import LuxuryItem from '@/components/MenuItem';
 
 export default function MenuPage() {
   // Data for ThreeColumnMenu
@@ -625,6 +628,44 @@ export default function MenuPage() {
     },
     menuImage: "https://img.freepik.com/free-photo/front-view-lentil-soup-traditional-azerbaijani-soup-with-spoon-plate-hand-with-greens-vegetables-cheese-table_141793-2833.jpg" // optional: you can add a photo if available
   };
+  const menuData = {
+    title: "Classic Combos",
+    subtitle: "Authentic Indian Flavors",
+    sectionHeading: "Signature Dishes",
+    leftColumn: [
+      {
+        title: "Chole Bhature",
+        price: "15.99",
+        subtitle: "spicy chickpea curry, fluffy bread",
+        description: "Spicy chickpea curry served with deep-fried, fluffy bread.",
+        image: "https://images.hindi.news18.com/ibnkhabar/uploads/2021/06/chole-bhature.jpg"
+      },
+      {
+        title: "Pav Bhaji",
+        price: "13.99",
+        subtitle: "mashed vegetable curry, butter-toasted bread",
+        description: "Mashed vegetable curry served with butter-toasted bread.",
+        image: "https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Instant-Pot-Mumbai-Pav-Bhaji-Recipe.jpg"
+      }
+    ],
+    rightColumn: [
+      {
+        title: "Aloo Poori",
+        price: "13.99",
+        subtitle: "spiced potato curry, puffed bread",
+        description: "Spiced potato curry served with deep-fried, puffed bread.",
+        image: "https://thefoodfairy.wordpress.com/wp-content/uploads/2011/08/dsc_8376.jpg"
+      },
+      {
+        title: "Sambar Chicken Rice",
+        price: "17.99",
+        subtitle: "tangy lentil stew, spiced chicken, rice",
+        description: "Flavorful combination of tangy lentil stew and spiced chicken served over rice.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBf7D_Y-YWtMENxTb-36z4Bu61ix1bHSN-mw&s"
+      }
+    ]
+  };
+  
   
   
 
@@ -804,6 +845,8 @@ export default function MenuPage() {
         menuImages={vegetarianAppetizersData.menuImages}
       />
       </div>
+
+      <LuxuryItem {...menuData} />;
 
       
 

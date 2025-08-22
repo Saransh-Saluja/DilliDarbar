@@ -28,3 +28,14 @@ body {
 .font-playfair {
   font-family: var(--font-playfair), serif;
 }
+
+* {
+  
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}

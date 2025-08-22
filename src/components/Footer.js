@@ -69,21 +69,14 @@ export default function Footer() {
             <h3 className="text-[#f5e3c6] text-lg font-playfair tracking-wider uppercase">
               Our Specialties
             </h3>
-            <div className="space-y-3">
-            {/* <FooterLink href="menu">Soups</FooterLink>
-            <FooterLink href="menu">Salads</FooterLink> */}
+         
             <FooterLink href="menu">Vegetarian Appetizers</FooterLink>
             <FooterLink href="menu">Non-Vegetarian Appetizers</FooterLink>
             <FooterLink href="menu">Curries</FooterLink>
             <FooterLink href="menu">Other House Specialities</FooterLink>
             <FooterLink href="menu">Classic Combos</FooterLink>
-            {/* <FooterLink href="menu">Dosa Corner</FooterLink>
-            <FooterLink href="menu">Flatbreads</FooterLink>
-            <FooterLink href="menu">Rice & Noodles</FooterLink>
-            <FooterLink href="menu">Breads</FooterLink>
-            <FooterLink href="menu">Desserts</FooterLink>
-            <FooterLink href="menu">Kids Menu</FooterLink> */}
-            </div>
+         
+
           </div>
 
           {/* Contact Info */}
@@ -124,14 +117,23 @@ export default function Footer() {
             </div>
 
             {/* Hours */}
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <h4 className="text-[#f5e3c6] text-sm font-playfair uppercase tracking-wider">Hours</h4>
               <div className="text-[#e3c493]/80 text-xs font-playfair space-y-1">
                 <p>Mon - Thu: 11:30 AM - 10:00 PM</p>
                 <p>Fri - Sat: 11:30 AM - 10:30 PM</p>
                 <p>Sunday: 12:00 PM - 9:30 PM</p>
               </div>
+            </div> */}
+            <div className="space-y-2">
+              <h4 className="text-[#f5e3c6] text-sm font-playfair uppercase tracking-wider">Hours</h4>
+              <div className="text-[#e3c493]/80 text-xs font-playfair space-y-1">
+                <p>Mon – Sun</p>
+                <p>11:00 AM – 3:00 PM</p>
+                <p>5:00 PM – 10:00 PM</p>
+              </div>
             </div>
+
           </div>
         </div>
 
