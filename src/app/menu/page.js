@@ -777,7 +777,7 @@ export default function MenuPage() {
 
       <NotificationPopup 
         title="Notification"
-        message="Select a dish to learn more!"
+        message="Click on a dish to learn more!"
         showOnLoad={true}
       />
       {/* Use the ThreeColumnMenu */}
