@@ -188,19 +188,25 @@ const LuxuryItem = ({ sectionHeading, leftColumn, rightColumn, title, subtitle }
               </svg>
             </div>
           </div>
-          <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-serif text-[#e3c493] mb-2 transition-all duration-700 ease-out delay-200 ${
-            isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}>{title}</h1>
+          <h1
+            className={`text-3xl sm:text-4xl lg:text-5xl font-serif text-[#e3c493] 
+              inline-block border-b-2 border-amber-600 pb-2 mb-2 
+              transition-all duration-700 ease-out delay-200 
+              ${isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+            `}
+          >
+            {title}
+          </h1>
         </div>
 
-        {/* Section Title */}
+        {/* Section Title
         <div ref={sectionRef} className="text-center mb-6 sm:mb-8">
           <h2 className={`text-2xl sm:text-3xl font-serif text-[#e3c493] border-b-2 border-amber-600 pb-2 inline-block transition-all duration-700 ease-out ${
             isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>
             {sectionHeading}
           </h2>
-        </div>
+        </div> */}
 
         {/* Menu Content - Two Column Layout without center images */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">

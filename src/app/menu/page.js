@@ -7,6 +7,8 @@ import LuxuryItem2 from '@/components/MenuItem2';
 import menuData from '../data/vegetarianAppetizers';
 import soupsAndSaladsMenuData from '../data/soupsAndSaladsMenuData';
 import nonVegetarianAppetizers from '../data/nonVegetarianAppetizers';
+import curries from '../data/curries';
+import LuxuryItem3 from '@/components/MenuItem3';
 
 export default function MenuPage() {
 
@@ -44,6 +46,10 @@ export default function MenuPage() {
 
       <div id="non-vegetarian-appetizers">
       <LuxuryItem {...nonVegetarianAppetizers} />
+      </div>
+
+      <div id="curries">
+      <LuxuryItem3 {...curries} />
       </div>
 
       

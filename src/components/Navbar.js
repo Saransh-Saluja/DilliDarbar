@@ -193,8 +193,7 @@ export default function Navbar() {
                 }`}
               >
                 {[
-                  ["Soups", "/menu#soups"],
-                  ["Salads", "/menu#salads"],
+                  ["Soups & Salads", "/menu#soups"],
                   ["Vegetarian Appetizers", "/menu#vegetarian-appetizers"],
                   ["Non-Vegetarian Appetizers", "/menu#non-vegetarian-appetizers"],
                   ["Curries", "/menu#curries"],
