@@ -121,11 +121,11 @@ const MenuItem = ({ slug, title, price, subtitle, description, image, index, opt
                         }`}
                       >
                         {choice.name}
-                        {choice.priceModifier !== undefined && (
+                        {/* {choice.priceModifier !== undefined && (
                           <span className="ml-1">
                             ({`${choice.priceModifier >= 0 ? '+' : ''}${choice.priceModifier.toFixed(2)}`})
                           </span>
-                        )}
+                        )} */}
                       </button>
                     ))}
                   </div>
