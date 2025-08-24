@@ -51,7 +51,7 @@ export default function MenuPage() {
       <div id="curries">
       <LuxuryItem3 {...curries} />
       </div>
-      <h3 className="text-sm font-serif text-[#e3c493] transition-colors duration-300 w-full text-center"> *Please notify of any allergies or Nut allergies to the server at the time of placing the order.</h3>
+      <h3 className="text-sm font-serif text-[#e3c493] transition-colors duration-300 w-full text-center"> *Please inform us of any food allergies before ordering, as our items may contain allergens or be prepared with shared equipment.</h3>
 
       
       
