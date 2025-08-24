@@ -78,8 +78,7 @@ export default function Navbar() {
               <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                 <div className="bg-black/95 backdrop-blur-xl border border-[#e3c493]/30 rounded-xl shadow-lg shadow-[#e3c493]/20 overflow-hidden max-h-80 overflow-y-auto">
                   {[
-                    ["Soups", "/menu#soups"],
-                    ["Salads", "/menu#salads"],
+                    ["Soups & Salads", "/menu#soups"],
                     ["Vegetarian Appetizers", "/menu#vegetarian-appetizers"],
                     ["Non-Vegetarian Appetizers", "/menu#non-vegetarian-appetizers"],
                     ["Curries", "/menu#curries"],
