@@ -5,6 +5,7 @@ const MenuNavigation = () => {
   const [activeSection, setActiveSection] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const menuSections = [
     { id: 'soups-and-salads', title: 'Soups & Salads', subtitle: 'Fresh Starters' },
@@ -22,8 +23,10 @@ const MenuNavigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (typeof window === "undefined") return;
+
       setIsScrolled(window.scrollY > 50);
-      
+
       // Find active section
       const sections = menuSections.map(section => section.id);
       const currentSection = sections.find(sectionId => {
@@ -34,19 +37,24 @@ const MenuNavigation = () => {
         }
         return false;
       });
-      
       if (currentSection) {
         setActiveSection(currentSection);
       }
+
+      // Scroll progress
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial call
-    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (sectionId) => {
+    if (typeof window === "undefined") return;
     const element = document.getElementById(sectionId);
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80;
@@ -59,7 +67,9 @@ const MenuNavigation = () => {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -160,9 +170,7 @@ const MenuNavigation = () => {
       <div className="fixed top-0 left-0 w-full h-1 bg-black/20 z-[9998]">
         <div 
           className="h-full bg-gradient-to-r from-[#e3c493] to-[#f9e4b7] transition-all duration-300 ease-out"
-          style={{
-            width: `${Math.min(100, (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100)}%`
-          }}
+          style={{ width: `${scrollProgress}%` }}
         ></div>
       </div>
 
@@ -206,7 +214,7 @@ const MenuNavigation = () => {
         </button>
       )}
 
-      {/* Keyboard Navigation Instructions (Hidden but accessible to screen readers) */}
+      {/* Keyboard Navigation Instructions */}
       <div className="sr-only">
         <p>Use Tab to navigate through menu sections, Enter to jump to section, or arrow keys for quick navigation.</p>
       </div>
