@@ -1,7 +1,7 @@
 'use client' 
 import React from 'react';
 import NotificationPopup from '@/components/popup';
-// import MenuNavigation from '@/components/menuNavigation';
+import MenuNavigation from '@/components/menuNavigation';
 import LuxuryItem from '@/components/MenuItem';
 import LuxuryItem2 from '@/components/MenuItem2';
 // Importing the menu sections
@@ -23,7 +23,7 @@ export default function MenuPage() {
   return (
     <div className="min-h-screen">
       {/* Add Navigation Component */}
-      {/* <MenuNavigation /> */}
+      <MenuNavigation />
       
       {/* Add top padding to account for fixed navigation */}
       <div className="pt-5">

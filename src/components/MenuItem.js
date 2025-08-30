@@ -38,7 +38,7 @@ const MenuItem = ({ slug, title, price, subtitle, description, image, index }) =
   };
 
   // Default description if none provided
-  const defaultDescription = `Experience the authentic flavors of ${title}. Our chefs have carefully crafted this dish using traditional techniques and the finest ingredients to create a memorable dining experience that will delight your taste buds.`;
+  const defaultDescription = ``;
 
   return (
     <div 
