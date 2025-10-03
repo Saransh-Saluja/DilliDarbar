@@ -146,26 +146,27 @@ const AboutUsPage = () => {
 
     {/* Description Section */}
     <div className="max-w-4xl mx-auto mb-16 text-center space-y-8">
-      <p className="font-serif text-lg text-gray-300 leading-relaxed">
-        At <span className="text-[#e3c493]">Dilli Darbar</span>, we believe food is more than just a meal — it's a journey. 
-        Our chefs craft each dish using time-honored recipes, aromatic spices, and the freshest 
-        ingredients to capture the true essence of North Indian cuisine. From buttery Dilliwala Butter Chicken 
-        and Dal Makhani to sizzling Tandoori Kebabs, from hearty Biryani to street-style Chaat – every plate tells 
-        a story of India's diverse and vibrant food culture.
-      </p>
-      
-      <p className="font-serif text-lg text-gray-300 leading-relaxed">
-        Whether you're joining us for a casual lunch, a family dinner, or a special celebration, 
-        our warm and welcoming ambiance makes every visit memorable. We're proud to serve a wide range 
-        of vegetarian and non-vegetarian dishes, as well as vegan and gluten-free options to cater 
-        to every palate.
-      </p>
-      
-      <p className="font-serif text-xl leading-relaxed text-[#e3c493] pt-4">
-        Come savor the flavors of Delhi at Dilli Darbar – where tradition meets taste, 
-        and every guest is treated like royalty.
-      </p>
-    </div>
+  <p className="font-serif text-lg text-gray-300 leading-relaxed">
+    At <span className="text-[#e3c493]">Dilli Darbar</span>, we believe food is more than just a meal — it&apos;s a journey. 
+    Our chefs craft each dish using time-honored recipes, aromatic spices, and the freshest 
+    ingredients to capture the true essence of North Indian cuisine. From buttery Dilliwala Butter Chicken 
+    and Dal Makhani to sizzling Tandoori Kebabs, from hearty Biryani to street-style Chaat – every plate tells 
+    a story of India&apos;s diverse and vibrant food culture.
+  </p>
+  
+  <p className="font-serif text-lg text-gray-300 leading-relaxed">
+    Whether you&apos;re joining us for a casual lunch, a family dinner, or a special celebration, 
+    our warm and welcoming ambiance makes every visit memorable. We&apos;re proud to serve a wide range 
+    of vegetarian and non-vegetarian dishes, as well as vegan and gluten-free options to cater 
+    to every palate.
+  </p>
+  
+  <p className="font-serif text-xl leading-relaxed text-[#e3c493] pt-4">
+    Come savor the flavors of Delhi at Dilli Darbar – where tradition meets taste, 
+    and every guest is treated like royalty.
+  </p>
+</div>
+
   
   </div>
 </div>
