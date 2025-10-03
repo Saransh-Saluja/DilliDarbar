@@ -197,7 +197,7 @@ const AboutUsPage = () => {
 
             <div className="mt-12 text-center">
               <p className="font-serif text-gray-300 text-lg mb-4">
-                Every plate tells a story of India's diverse and vibrant food culture
+                Every plate tells a story of India&apos;s diverse and vibrant food culture
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm font-serif text-gray-400">
                 <span className="px-4 py-2 border border-yellow-400/20 rounded-full">Vegetarian Options</span>
