@@ -83,13 +83,23 @@ const MenuNavigation = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
           <div className="flex items-center justify-between py-3">
             {/* Logo/Title */}
-            <div className="flex items-center cursor-pointer" onClick={scrollToTop}>
-              <div className="flex items-center">
+            <div className="flex items-center gap-4">
+              <a 
+                href="/"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-serif text-[#e3c493] hover:text-[#f9e4b7] hover:bg-[#e3c493]/10 transition-all duration-300 border border-[#e3c493]/30 hover:border-[#e3c493]/50"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span>Home</span>
+              </a>
+              <div className="hidden md:flex items-center cursor-pointer" onClick={scrollToTop}>
                 <svg width="24" height="24" viewBox="0 0 24 24" className="text-[#e3c493] mr-2">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" 
                         fill="currentColor"/>
                 </svg>
-                <h1 className="text-lg sm:text-xl font-serif text-[#e3c493] hover:text-[#f9e4b7] transition-colors duration-300">
+                <h1 className="hidden md:block text-lg sm:text-xl font-serif text-[#e3c493] hover:text-[#f9e4b7] transition-colors duration-300">
                   Our Menu
                 </h1>
               </div>
