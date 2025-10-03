@@ -32,13 +32,7 @@ const ComingSoon = () => {
         </div>
 
         {/* Elegant Description */}
-        <div className="mb-20 max-w-2xl mx-auto">
-          <p className="font-playfair text-gray-300 text-lg leading-relaxed italic tracking-wide">
-            We are meticulously crafting every detail to deliver an unparalleled dining experience. 
-            From our carefully curated menu to our thoughtfully designed ambiance, 
-            every element is being perfected with passion and precision.
-          </p>
-        </div>
+       
 
         {/* Contact Information */}
         <div className="border-t border-yellow-400/20 pt-16">
