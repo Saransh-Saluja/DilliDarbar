@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
 const MenuNavigation = () => {
@@ -84,7 +85,7 @@ const MenuNavigation = () => {
           <div className="flex items-center justify-between py-3">
             {/* Logo/Title */}
             <div className="flex items-center gap-4">
-              <a 
+              <Link
                 href="/"
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-serif text-[#e3c493] hover:text-[#f9e4b7] hover:bg-[#e3c493]/10 transition-all duration-300 border border-[#e3c493]/30 hover:border-[#e3c493]/50"
               >
@@ -93,7 +94,7 @@ const MenuNavigation = () => {
                   <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
                 <span>Home</span>
-              </a>
+              </Link>
               <div className="hidden md:flex items-center cursor-pointer" onClick={scrollToTop}>
                 <svg width="24" height="24" viewBox="0 0 24 24" className="text-[#e3c493] mr-2">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" 
