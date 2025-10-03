@@ -630,7 +630,7 @@ const CateringPage = () => {
     
     <div className="max-w-3xl mx-auto mt-12 space-y-4">
       <p className="font-serif text-gray-300 leading-relaxed">
-        Make your next event unforgettable with the rich, vibrant flavors of Dilli Darbar Indian Cuisine. Whether you're hosting an intimate gathering, a corporate event, a wedding, or a festive celebration, our catering service brings the taste of authentic Indian cuisine straight to your venue.
+        Make your next event unforgettable with the rich, vibrant flavors of Dilli Darbar Indian Cuisine. Whether you&apos;re hosting an intimate gathering, a corporate event, a wedding, or a festive celebration, our catering service brings the taste of authentic Indian cuisine straight to your venue.
       </p>
       <p className="font-serif text-gray-300 leading-relaxed">
         We specialize in customizing menus to suit your occasion — from traditional North Indian classics like Dilliwala Butter Chicken, Paneer Tikka, and Mutton Rogan Josh, to beloved street-style snacks, hearty biryanis, and decadent desserts. Our chefs use only the finest ingredients and aromatic spices to ensure every dish delights your guests.
@@ -828,7 +828,7 @@ const CateringPage = () => {
               {/* Food Categories */}
               <div className="border-t border-yellow-400/20 pt-8">
                 <h3 className="font-serif text-xl text-gray-200 mb-6 tracking-wide">Cuisine Preferences</h3>
-                <p className="font-serif text-gray-400 text-sm mb-4 italic">Select the categories you're interested in:</p>
+                <p className="font-serif text-gray-400 text-sm mb-4 italic">Select the categories you&apos;re interested in:</p>
                 <div className="grid md:grid-cols-2 gap-3">
                   {foodCategories.map(category => (
                     <label key={category} className="flex items-center space-x-3 cursor-pointer group">
@@ -868,7 +868,7 @@ const CateringPage = () => {
                   <span>Submit Catering Inquiry</span>
                 </button>
                 <p className="font-serif text-gray-400 text-sm mt-4 italic">
-                  We'll respond within 24 hours to discuss your event
+                  We&apos;ll respond within 24 hours to discuss your event
                 </p>
               </div>
             </form>
